@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color: black;
+      background-size: 390px 660px;
+      background-position: center 57px;
+      background-repeat: no-repeat;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      text-align: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position-x: center;
+      border-radius: 15px;
+      position: relative;
+    }
+
+    .back-link {
+      position: absolute;
+      top: 21px;
+      left: 14px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    iframe {
+      width: 100vw;
+      height: 660px;
+      border: none;
+    }
+    
+    h1 {
+      background-color: white;
+      color: black;
+      padding: 10px;
+      border-radius: 15px; /* Измененное скругление углов */
+    }
+    
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <div onclick="loadPage('meeting.html')" class="back-link">Назад</div>
+  <div class="center">
+    <h1>Карты</h1>
+  </div>
+  <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A68d240168dc992c2dd08de26ad924e07c687f2e32489fd2dda634253e9fa04d5&amp;source=constructor" frameborder="0"></iframe>
+</body>
+</html>

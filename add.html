@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    
+    .background-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url('image2.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    
+    .content {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .addheader {
+      color: #000;
+      background-color: white;
+      border-radius: 15px;
+      font-weight: bold;
+      padding: 10px 10px; /* Измененные отступы - 30px сверху и снизу, 10px слева и справа */
+    }
+
+    .content .image-info-text {
+      position: absolute;
+      color: white;
+      z-index: 2;
+      background-color: purple;
+      border-radius: 15px;
+      padding: 5px 10px; /* Добавлено отступы внутри элемента */
+      color: white; /* Добавлено свойство цвета текста плейсхолдера */
+      border: none; /* Удалена обводка */
+      font-size: 18px; /* Увеличенный размер шрифта */
+      width: auto; /* Установлено значение ширины "авто" */
+    }
+
+    .content .image-info-text::placeholder {
+      color: white; /* Цвет текста плейсхолдера */
+    }
+    
+    h1 {
+      font-size: 32px;
+    }
+    
+    .upload-button {
+      background-color: #000;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      position: absolute;
+      left: 96px;
+      top: 351px;
+    }
+
+    .upload-button:hover {
+      background-color: #333;
+    }
+
+    .hidden-file-input {
+      display: none;
+    }
+
+    .place-info {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      left: 20px; /* Перемещение на 120px по горизонтали */
+      top: 660px; /* Перемещение на 660px по вертикали */
+    }
+
+
+    .circle {
+      width: 10px;
+      height: 10px;
+      border: 2px solid white; /* Белый контур */
+      border-radius: 50%; /* Задание формы круга */
+      margin-right: 10px; /* Добавлен отступ справа для разделения с текстом */
+    }
+
+    .cricle2 {
+      margin-left: 50px; /* Добавлен отступ справа для разделения с текстом */
+    }
+
+    .place-text {
+      color: white;
+      font-size: 16px;
+    }
+
+    .circle.filled {
+      background-color: white;
+    }
+
+    .location {
+      position: absolute;
+      left: 20px;
+      top: 700px;
+      display: none;
+    }
+
+    .place-text2 {
+      color: grey;
+      font-size: 16px;
+    }
+
+    .location .place-text2 {
+      margin-right: 10px;
+    }
+
+
+  </style>
+  <script>
+    function adjustInputWidth(element) {
+      element.style.width = element.value.length + 0.5 + 'ch';
+    }
+
+    function handleImageUpload() {
+      document.getElementById('file-input').click();
+    }
+
+    function handleFileSelect(event) {
+	  const file = event.target.files[0];
+	  const reader = new FileReader();
+
+	  reader.onload = function(e) {
+	    const image = new Image();
+	    image.src = e.target.result;
+
+	    image.onload = function() {
+	      // Обработка загруженного изображения
+	      // Можете добавить код для отображения изображения или выполнения других действий
+	      document.querySelector('.background-image').style.backgroundImage = `url(${image.src})`;
+	    };
+	  };
+
+      reader.readAsDataURL(file);
+    }
+
+    
+    function toggleTextColor(element) {
+      element.style.color = (element.style.color === "white") ? "gray" : "white";
+    }
+
+    function toggleCircleFill() {
+      var locationDiv = document.getElementById("location");
+      var circleDiv = document.querySelector(".circle");
+      
+      locationDiv.style.display = (locationDiv.style.display === "none" || locationDiv.style.display === "") ? "flex" : "none";
+      circleDiv.style.backgroundColor = (circleDiv.style.backgroundColor === "white") ? "" : "white";
+    }
+
+
+
+  </script>
+</head>
+<body>
+  <div class="background-image"></div>
+  
+  <div class="content">
+    <p class="addheader">Создать мероприятие</p>
+    <div class="place-info">
+      <div class="circle" onclick="toggleCircleFill()"></div>
+      <div class="place-text" onclick="toggleCircleFill();">Место</div>
+      <div class="circle cricle2"></div>
+      <div class="place-text">Время</div>
+    </div>
+    <div class="location" id="location">
+      <div class="place-text2" onclick="toggleTextColor(this)">Дом</div>
+      <div class="place-text2" onclick="toggleTextColor(this)">Университет</div>
+      <div class="place-text2" onclick="toggleTextColor(this)">Работа</div>
+      <div class="place-text2">+ Карта</div>
+    </div>
+
+    <input class="image-info-text" type="text" placeholder="Название" oninput="adjustInputWidth(this)" style="width: 80px; left: 22px; top: 611px;">
+    
+    <button class="upload-button" onclick="handleImageUpload()">Изменить изображение</button>
+    <input class="hidden-file-input" id="file-input" type="file" accept="image/*" onchange="handleFileSelect(event)">
+  </div>
+
+
+
+
+</body>
+</html>

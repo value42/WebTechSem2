@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Мой профиль</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: black;
+            color: white;
+            margin: 0;
+        }
+
+        .profile-image {
+            margin-top: 37px;
+            margin-bottom: 5px;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            background-color: white;
+            color: black;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 15px;
+            padding: 5px 10px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .profile-info {
+            color: white;
+            font-size: 15px;
+            position: relative;
+            margin-top: 50px;
+            text-align: left;
+            left: 40px;
+        }
+
+        .content {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .notification {
+            height: 139px;
+            background-color: gray;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .notification-image {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+            position: absolute;
+            top: 18px;
+            left: 24px;
+        }
+
+        .notification-text {
+            font-weight: bold;
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            top: 3px;
+            left: 70px;
+        }
+
+        .notification-additional-text {
+            font-size: 16px;
+            color: white;
+            position: absolute;
+            top: 36px;
+            left: 70px;
+        }
+
+        .notification-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            width: 100px;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .notification-button {
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .notification-button.reject {
+            width: 134px;
+            height: 34px;
+            background-color: black;
+            color: white;
+            border: 1px solid white;
+            border-radius: 15px;
+            position: absolute;
+            bottom: 0px;
+            left: -100px;
+        }
+
+        .notification-button.accept {
+            width: 134px;
+            height: 34px;
+            background-color: purple;
+            color: white;
+            border: 1px solid purple;
+            border-radius: 15px;
+            position: absolute;
+            bottom: 0px;
+            left: 70px;
+        }
+
+        .top-right-buttons {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .top-right-buttons button {
+            background-color: transparent;
+            border: none;
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <img src="image7.jpg" alt="Мое изображение" class="profile-image">
+    <p class="profile-name">Арина Лебедева</p>
+    <p class="profile-info">Дополнительная информация</p>
+
+    <div class="content">
+        <div class="notification">
+            <img src="image10.jpg" alt="Изображение" class="notification-image">
+            <p class="notification-text">Арина</p>
+            <p class="notification-additional-text">Дополнительный текст</p>
+            <div class="notification-buttons">
+                <button class="notification-button reject">Подробнее</button>
+                <button class="notification-button accept">Изменить</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="top-right-buttons">
+        <button><i class="fas fa-cog"></i></button>
+        <button><i class="fas fa-sign-out-alt"></i></button>
+    </div>
+</body>
+</html>
