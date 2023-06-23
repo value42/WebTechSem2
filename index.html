@@ -38,19 +38,281 @@
     .navigation-icon:hover {
       color: #333;
     }
+
+    .hidden {
+    display: none; /* Добавлено скрытие контейнеров */
+  }
+
+  .notauthent {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;  
+  font-family: Raleway, sans-serif;
+  background: linear-gradient(90deg, #626262, #626262); 
+}
+
+
+
+ .notauthent .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+ .notauthent .screen {    
+  background: linear-gradient(90deg, #818181, #9F9F9F);    
+  position: relative;  
+  width: 390px;
+  height: 844px;
+  box-shadow: 0px 0px 24px #818181;
+}
+
+ .notauthent .screen__content {
+  z-index: 1;
+  position: relative;  
+  height: 100%;
+}
+
+ .notauthent .screen__background {    
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  -webkit-clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0);
+  background-color: black;  
+}
+
+ .notauthent .screen__background__shape {
+  transform: rotate(45deg);
+  position: absolute;
+}
+
+ .notauthent .screen__background__shape1 {
+  height: 620px;
+  width: 620px;
+  background: white;  
+  top: 10px;
+  right: 140px;  
+  border-radius: 0 72px 0 0;
+}
+
+.screen__background__shape2 {
+  height: 220px;
+  width: 220px;
+  background: linear-gradient(8deg, #626262 0%, #000 100%);  
+  top: -132px;
+  right: -20px;  
+  border-radius: 32px;
+}
+
+.screen__background__shape3 {
+  height: 640px;
+  width: 190px;
+  background: linear-gradient(270deg, #400087, #000000);
+  top: 30px;
+  right: 0;  
+  border-radius: 32px;
+}
+
+.screen__background__shape4 {
+  height: 400px;
+  width: 300px;
+  background: linear-gradient(224deg, #626262 0%, #000 100%);  
+  top: 630px;
+  right: 50px;  
+  border-radius: 60px;
+}
+
+.login, .register {
+  width: 320px;
+  padding: 30px;
+  padding-top: 156px;
+}
+
+.login__field {
+  padding: 20px 0px;  
+  position: relative;  
+}
+
+.login__icon {
+  position: absolute;
+  top: 30px;
+  color: #626262;
+}
+
+.login__input {
+  border: none;
+  border-bottom: 2px solid #D1D1D4;
+  background: none;
+  padding: 10px;
+  padding-left: 24px;
+  font-weight: 700;
+  width: 75%;
+  transition: .2s;
+}
+
+.login__input:active,
+.login__input:focus,
+.login__input:hover {
+  outline: none;
+  border-bottom-color: #626262;
+}
+
+.login__submit {
+  background: #fff;
+  font-size: 14px;
+  margin-top: 30px;
+  padding: 16px 20px;
+  border-radius: 26px;
+  border: 1px solid #D4D3E8;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: #626262;
+  box-shadow: 0px 2px 2px #626262;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.login__submit:active,
+.login__submit:focus,
+.login__submit:hover {
+  border-color: #9F9F9F;
+  outline: none;
+}
+
+.button__icon {
+  font-size: 24px;
+  margin-left: auto;
+  color: #818181;
+}
+
+.notauthent .button-signin {
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    position: absolute;
+    border: 1px solid white;
+    left: 70px;
+    top: 194px;
+    padding: 10px 40px;
+    z-index: 20;
+}
+
+.notauthent .button-register {
+    background-color: white;
+    color: black;
+    border-radius: 15px;
+    border: 1px solid black;
+    position: absolute;
+    left: 235px;
+    top: 194px;
+    padding: 10px 20px;
+    z-index: 20;
+}
+
+.button-want.success {
+      background-color: black;
+      color: white;
+}
+
+
   </style>
 </head>
 <body>
   <!-- Контент страницы -->
-  <div id="content"></div>
 
-  <div class="navigation">
-    <div class="navigation-icon" onclick="loadPage('home.html')"><i class="fas fa-home"></i></div> <!-- Иконка домашней страницы -->
-    <div class="navigation-icon" onclick="loadPage('search.html')"><i class="fas fa-search"></i></div> <!-- Иконка поиска -->
-    <div class="navigation-icon" onclick="loadPage('add.html')"><i class="fas fa-plus"></i></div> <!-- Иконка добавления публикации -->
-    <div class="navigation-icon" onclick="loadPage('notifications.html')"><i class="fas fa-bell"></i></div> <!-- Иконка уведомлений -->
-    <div class="navigation-icon" onclick="loadPage('profile.html')"><i class="fas fa-user"></i></div> <!-- Иконка профиля -->
+  <div class="notauthent ">
+    <button class="button-signin" style="position: absolute;" onclick="toggleLogin()">Вход</button>
+    <button class="button-register" style=" position: absolute;" onclick="toggleRegister()">Регистрация</button>
+
+
+
+    <div class="login">
+      <div class="container">
+        <div class="screen">
+          <div class="screen__content">
+            <form class="login">
+              <div class="login__field">
+                <i class="login__icon fas fa-user"></i>
+                <input type="text" class="login__input" placeholder="Логин / Email">
+              </div>
+              <div class="login__field">
+                <i class="login__icon fas fa-lock"></i>
+                <input type="password" class="login__input" placeholder="Пароль">
+              </div>
+              <button class="button login__submit" onclick="toggleAuthent()"> <!-- Добавлено событие onclick -->
+                <span class="button__text">Войти</span>
+                <i class="button__icon fas fa-chevron-right"></i>
+              </button>          
+            </form>
+          </div>
+          <div class="screen__background" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0;">
+            <span class="screen__background__shape screen__background__shape4"></span>
+            <span class="screen__background__shape screen__background__shape3"></span>    
+            <span class="screen__background__shape screen__background__shape2"></span>
+            <span class="screen__background__shape screen__background__shape1"></span>
+          </div>    
+        </div>
+      </div>
+    </div>
+
+    <div class="register hidden">
+      <div class="container">
+        <div class="screen">
+          <div class="screen__content">
+            <form class="login">
+              <div class="login__field">
+                <i class="login__icon fas fa-user"></i>
+                <input type="text" class="login__input" placeholder="Email">
+              </div>
+              <div class="login__field">
+                <i class="login__icon fas fa-lock"></i>
+                <input type="password" class="login__input" placeholder="Пароль">
+              </div>
+              <div class="login__field">
+                <i class="login__icon fas fa-lock"></i>
+                <input type="password" class="login__input" placeholder="Повторите пароль">
+              </div>
+              <button class="button login__submit" onclick="toggleAuthent()"> <!-- Добавлено событие onclick -->
+                <span class="button__text">Зарегистрироваться</span>
+                <i class="button__icon fas fa-chevron-right"></i>
+              </button>          
+            </form>
+          </div>
+          <div class="screen__background" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0;">
+            <span class="screen__background__shape screen__background__shape4"></span>
+            <span class="screen__background__shape screen__background__shape3"></span>    
+            <span class="screen__background__shape screen__background__shape2"></span>
+            <span class="screen__background__shape screen__background__shape1"></span>
+          </div>    
+        </div>
+      </div>
+    </div>
+    
+
   </div>
+
+  <div class="authent hidden">
+    <div id="content" >
+    
+    </div>
+
+    <div class="navigation" >
+      <div class="navigation-icon" onclick="loadPage('home.html')"><i class="fas fa-home"></i></div> <!-- Иконка домашней страницы -->
+      <div class="navigation-icon" onclick="loadPage('search.html')"><i class="fas fa-search"></i></div> <!-- Иконка поиска -->
+      <div class="navigation-icon" onclick="loadPage('add.html')"><i class="fas fa-plus"></i></div> <!-- Иконка добавления публикации -->
+      <div class="navigation-icon" onclick="loadPage('notifications.html')"><i class="fas fa-bell"></i></div> <!-- Иконка уведомлений -->
+      <div class="navigation-icon" onclick="loadPage('profile.html')"><i class="fas fa-user"></i></div> <!-- Иконка профиля -->
+    </div>
+  </div>
+  
 
   <script src="https://kit.fontawesome.com/your-font-awesome-kit.js"></script>
   <script>
@@ -127,9 +389,79 @@
       locationDiv.style.display = (locationDiv.style.display === "none" || locationDiv.style.display === "") ? "flex" : "none";
       circleDiv.style.backgroundColor = (circleDiv.style.backgroundColor === "white") ? "" : "white";
     }
+  </script>
+  <script>
+        function removeNotification(button) {
+            var notification = button.parentNode.parentNode;
+            notification.parentNode.removeChild(notification);
+        }
+    </script>
+  <script>
+    function toggleAuthent() {
+      event.preventDefault(); // Предотвращение обновления страницы
 
+      var notAuthentElement = document.querySelector('.notauthent');
+      var authentElement = document.querySelector('.authent');
+      
+      notAuthentElement.classList.add('hidden');
+      authentElement.classList.remove('hidden');
+    }
 
+    function toggleExit() {
+      event.preventDefault(); // Предотвращение обновления страницы
+      
+      var notAuthentElement = document.querySelector('.notauthent');
+      var authentElement = document.querySelector('.authent');
+      
+      notAuthentElement.classList.remove('hidden');
+      authentElement.classList.add('hidden');
+    }
 
+    function toggleLogin() {
+      event.preventDefault(); // Предотвращение обновления страницы
+      
+      var loginElement = document.querySelector('.login');
+      var registerElement = document.querySelector('.register');
+      
+      loginElement.classList.remove('hidden');
+      registerElement.classList.add('hidden');
+
+      var buttonRegister = document.querySelector('.button-register');
+      buttonRegister.style.color = 'black';
+      buttonRegister.style.backgroundColor = 'white';
+      buttonRegister.style.borderColor = 'black';
+
+      var buttonLogin = document.querySelector('.button-signin');
+      buttonLogin.style.color = 'white';
+      buttonLogin.style.backgroundColor = 'black';
+      buttonLogin.style.borderColor = 'black';
+    }
+
+    function toggleRegister() {
+      event.preventDefault(); // Предотвращение обновления страницы
+      
+      var loginElement = document.querySelector('.login');
+      var registerElement = document.querySelector('.register');
+      
+      loginElement.classList.add('hidden');
+      registerElement.classList.remove('hidden');
+
+      var buttonLogin = document.querySelector('.button-signin');
+      buttonLogin.style.color = 'black';
+      buttonLogin.style.backgroundColor = 'white';
+      buttonLogin.style.borderColor = 'black';
+
+      var buttonRegister = document.querySelector('.button-register');
+      buttonRegister.style.color = 'white';
+      buttonRegister.style.backgroundColor = 'black';
+      buttonRegister.style.borderColor = 'black';
+    }
+
+    function handleButtonClick(button) {
+      button.innerHTML = "Вы записаны!";
+      button.classList.add("success");
+      button.disabled = true;
+    }
   </script>
 </body>
 </html>

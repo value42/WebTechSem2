@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color: black;
+      background-size: 390px 660px;
+      background-position: center 57px;
+      background-repeat: no-repeat;
+      height: 100vh;
+      /*margin: 30;*/
+      padding: 20;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      text-align: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position-x: center;
+      border-radius: 15px;
+      position: relative;
+    }
+    .addheader {
+          color: #000;
+          background-color: white;
+          border-radius: 15px;
+          font-weight: bold;
+          font-size: 32px;
+          padding: 40 px;
+          width: 130 px;
+          top: 30x;
+          left: 240px;
+          position: absolute;
+        }
+
+    .back-link {
+      position: absolute;
+      top: 21px;
+      left: 14px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .profile-image {
+      top: 5px;
+      left: 0px;
+      /*margin-top: 20px;
+      margin-bottom: 5px;*/
+      width: 390px;
+      height: 750px;
+      object-fit: cover;
+      z-index: 2;
+    }
+    
+    h1 {
+      top: 25px;
+      left: 240px;
+      background-color: white;
+      color: black;
+      padding: 10px;
+      border-radius: 15px; /* Измененное скругление углов */
+    }
+    
+    .center {
+      top: 25px;
+      left: 240px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .image-info-text {
+      position: absolute;
+      color: white;
+      z-index: 2;
+      background-color: purple;
+      border-radius: 15px;
+      padding: 5px 10px; /* Добавлено отступы внутри элемента */
+      color: white; /* Добавлено свойство цвета текста плейсхолдера */
+      border: none; /* Удалена обводка */
+      font-size: 18px; /* Увеличенный размер шрифта */
+      width: auto; /* Установлено значение ширины "авто" */
+    }
+
+    .image-info-text::placeholder {
+      color: white; /* Цвет текста плейсхолдера */
+    }
+
+    .notification {
+          height: 139px;
+          background-color: gray;
+          border-radius: 15px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          position: relative;
+          margin-bottom: 20px;
+        }
+
+        .notification-image {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          object-fit: cover;
+          position: absolute;
+          top: 18px;
+          left: 24px;
+        }
+
+        .notification-text {
+          font-weight: bold;
+          color: white;
+          font-size: 20px;
+          position: absolute;
+          top: 3px;
+          left: 70px;
+        }
+
+        .notification-additional-text {
+          font-size: 16px;
+          color: white;
+          position: absolute;
+          top: 36px;
+          left: 70px;
+        }
+
+        .notification-buttons {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 10px;
+          width: 100px;
+          position: absolute;
+          bottom: 10px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        .notification-button {
+          border: none;
+          border-radius: 5px;
+          padding: 5px 10px;
+          cursor: pointer;
+        }
+
+        .notification-button.reject {
+          width: 134px;
+          height: 34px;
+          background-color: black;
+          color: white;
+          border: 1px solid white;
+          border-radius: 15px;
+          position: absolute;
+          bottom: 0px;
+          left: -100px;
+        }
+
+        .notification-button.accept {
+          width: 134px;
+          height: 34px;
+          background-color: purple;
+          color: white;
+          border: 1px solid purple;
+          border-radius: 15px;
+          position: absolute;
+          bottom: 0px;
+          left: 70px;
+        }
+  </style>
+</head>
+<body>
+  <div onclick="loadPage('add.html')" class="back-link">Назад</div>
+  <p class="addheader" style="width: 120px;">Карта</p>
+  <input class="image-info-text" type="text" placeholder="Поиск" oninput="adjustInputWidth(this)" style="width: 120px; left: 22px; top: 80px;">
+  <img src="image7.jpg" alt="Мое изображение" class="profile-image">
+   
+</body>
+</html>

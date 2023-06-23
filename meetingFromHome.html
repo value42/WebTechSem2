@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color: black;
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 1) 100%), url("image1.jpg");
+      background-size: 390px 660px;
+      background-position: center 57px;
+      background-repeat: no-repeat;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      text-align: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position-x: center;
+      border-radius: 15px;
+      position: relative;
+    }
+
+    .back-link {
+      position: absolute;
+      top: 21px;
+      left: 14px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .overlay-image {
+      position: absolute;
+      top: 160px;
+      left: 140px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .image-caption {
+      background-color: white;
+      color: black;
+      font-size: 34px;
+      margin-top: -130px;
+      border-radius: 15px;
+      padding: 5px 10px;
+      font-weight: bold;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: max-content;
+    }
+
+    .author-info {
+      display: flex;
+      align-items: center;
+      margin-top: -70px;
+      margin-bottom: -20px;
+    }
+
+    .author-label {
+      font-size: 16px;
+      margin-right: 10px;
+    }
+
+    .author-image {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 10px;
+    }
+
+    .author-name {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .second-image {
+      width: 25px;
+      height: 25px;
+      position: absolute;
+      z-index: 2;
+      left: 25px;
+      top: 600px;
+      margin-right: 10px;
+    }
+
+    .details {
+      position: absolute;
+      color: white;
+      left: 42px;
+      top: 654px;
+      z-index: 2;
+    }
+
+    .othervisit img {
+      object-fit: cover;
+      border-radius: 40px;
+    }
+
+    .additional-label {
+      position: absolute;
+      color: white;
+      left: 60px;
+      top: 425px;
+      z-index: 2;
+      font-size: 16px;
+    }
+
+    .open-map {
+      position: absolute;
+      color: white;
+      left: 120px;
+      bottom: 330px;
+      transform: translateX(-50%);
+      font-size: 15px;
+      font-weight: bold;
+      padding: 7px;
+      background-color: gray;
+      border-radius: 15px;
+    }
+
+    .map-preview {
+      width: 400px;
+      height: 300px;
+      margin-top: 20px;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .map-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <div onclick="loadPage('home.html')" class="back-link">Назад</div>
+  <img src="image7.jpg" class="overlay-image" alt="Overlay Image"style="left: 140px; top: 210px;">
+  <div class="image-caption"style="left: 200px; top: 420px;">High Heels</div>
+  <div class="author-info">
+    <div class="author-label">Автор:</div>
+    <img src="image7.jpg" class="author-image" alt="Author Image">
+    <div class="author-name">Арина</div>
+  </div>
+  <div class="othervisit">
+    <img src="image10.jpg" class="second-image" alt="Изображение 10" style="left: 60px; top: 395px;">
+    <img src="image11.jpg" class="second-image" alt="Изображение 11" style="left: 72px; top: 395px;">
+    <img src="image12.jpg" class="second-image" alt="Изображение 12" style="left: 84px; top: 395px;">
+    <p class="details" style="left: 120px; top: 383px;">Кто идет</p>
+    <p class="additional-label">Новый мастер-класс</p>
+    <div onclick="loadPage('map.html')" class="open-map">
+      Открыть карту
+    </div>
+  </div>
+  <!-- <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A68d240168dc992c2dd08de26ad924e07c687f2e32489fd2dda634253e9fa04d5&amp;source=constructor" width="346" height="240" frameborder="0"></iframe> -->
+</body>
+</html>

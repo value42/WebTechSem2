@@ -43,18 +43,19 @@
         }
 
         .content {
-            text-align: center;
+            /*text-align: center;*/
             padding: 20px;
         }
 
         .notification {
             height: 139px;
+            width: 364px;
             background-color: gray;
             border-radius: 15px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            flex-direction: column;
+            /*justify-content: center;
+            flex-direction: column;*/
             position: relative;
             margin-bottom: 20px;
         }
@@ -85,85 +86,64 @@
             top: 36px;
             left: 70px;
         }
-
-        .notification-buttons {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
-            width: 100px;
+        .notification .button-want {
+            background-color: white;
+            color: black;
+            border-radius: 15px;
             position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
+            border: 1px solid white;
+            left: 220px;
+            top: 65px;
+            padding: 10px 20px;
+            margin-top: 20px;
         }
 
-        .notification-button {
-            border: none;
-            border-radius: 5px;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
 
-        .notification-button.reject {
-            width: 134px;
-            height: 34px;
+        .notification .button-want.success {
             background-color: black;
             color: white;
+        }
+        
+        .notification .button-details {
+            background-color: black;
+            color: white;
+            border-radius: 15px;
             border: 1px solid white;
-            border-radius: 15px;
             position: absolute;
-            bottom: 0px;
-            left: -100px;
+            left: 35px;
+            top: 65px;
+            padding: 10px 20px;
+            margin-top: 20px;
+        }
+        .back-link {
+          position: absolute;
+          top: 21px;
+          left: 14px;
+          color: #fff;
+          font-size: 16px;
+          cursor: pointer;
         }
 
-        .notification-button.accept {
-            width: 134px;
-            height: 34px;
-            background-color: purple;
-            color: white;
-            border: 1px solid purple;
-            border-radius: 15px;
-            position: absolute;
-            bottom: 0px;
-            left: 70px;
-        }
-
-        .top-right-buttons {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
-
-        .top-right-buttons button {
-            background-color: transparent;
-            border: none;
-            font-size: 20px;
-            color: white;
-            cursor: pointer;
-            margin-left: 10px;
         }
     </style>
 </head>
 <body>
-    <img src="me.jpg" alt="Мое изображение" class="profile-image">
+    <div onclick="loadPage('home.html')" class="back-link">Назад</div>
+    <img src="image7.jpg" alt="Мое изображение" class="profile-image">
     <p class="profile-name">Арина Лебедева</p>
-    <p class="profile-info">a_lebedevad@mail.ru</p>
+    <p class="profile-info">Дополнительная информация</p>
 
     <div class="content">
         <div class="notification">
-            <img src="me.jpg" alt="Изображение" class="notification-image">
+            <img src="image10.jpg" alt="Изображение" class="notification-image">
             <p class="notification-text">Арина</p>
-            <p class="notification-additional-text">High Heels</p>
-            <div class="notification-buttons">
-                <button onclick="loadPage('meetingFromProfile.html')" class="notification-button reject">Подробнее</button>
-                <button class="notification-button accept">Изменить</button>
-            </div>
+            <p class="notification-additional-text">Дополнительный текст</p>
+            <button onclick="loadPage('meetingFromUser.html')" style="left: 35px; top: 65px;" class="button-details">Подробнее</button>
+            <button class="button-want" style="left: 220px; top: 65px;"onclick="handleButtonClick(this)">Хочу пойти</button>
+            
         </div>
     </div>
 
-    <div class="top-right-buttons">
-        <button><i class="fas fa-cog"></i></button>
-        <button onclick="toggleExit()"><i class="fas fa-sign-out-alt"></i></button>
-    </div>
+
 </body>
 </html>

@@ -106,45 +106,51 @@
       <div class="content">
         <p class="addheader">Приглашения на мероприятия</p>
         <div class="notification">
-          <img src="image10.jpg" alt="Изображение" class="notification-image">
+          <img src="alina.jpg" alt="Изображение" class="notification-image">
           <p class="notification-text">Элина</p>
-          <p class="notification-additional-text">Дополнительный текст</p>
+          <p class="notification-additional-text">Выставка манги</p>
           <div class="notification-buttons">
-            <button class="notification-button reject">Отклонить</button>
-            <button class="notification-button accept">Принять</button>
+            <button class="notification-button reject" onclick="removeNotification(this)">Отклонить</button>
+            <button class="notification-button accept" onclick="removeNotification(this)">Принять</button>
           </div>
         </div>
 
         <div class="notification">
-          <img src="image10.jpg" alt="Изображение" class="notification-image">
-          <p class="notification-text">Варя</p>
-          <p class="notification-additional-text">Дополнительный текст</p>
+          <img src="varya.jpg" alt="Изображение" class="notification-image">
+          <p class="notification-text">Варвара</p>
+          <p class="notification-additional-text">Гидровояж</p>
           <div class="notification-buttons">
-            <button class="notification-button reject">Отклонить</button>
-            <button class="notification-button accept">Принять</button>
+            <button class="notification-button reject" onclick="removeNotification(this)">Отклонить</button>
+            <button class="notification-button accept" onclick="removeNotification(this)">Принять</button>
           </div>
         </div>
 
         <div class="notification">
-          <img src="image10.jpg" alt="Изображение" class="notification-image">
+          <img src="liza.jpg" alt="Изображение" class="notification-image">
           <p class="notification-text">Лиза</p>
-          <p class="notification-additional-text">Дополнительный текст</p>
+          <p class="notification-additional-text">Ночь музеев</p>
           <div class="notification-buttons">
-            <button class="notification-button reject">Отклонить</button>
-            <button class="notification-button accept">Принять</button>
+            <button class="notification-button reject" onclick="removeNotification(this)">Отклонить</button>
+            <button class="notification-button accept" onclick="removeNotification(this)">Принять</button>
           </div>
         </div>
 
         <div class="notification">
-          <img src="image10.jpg" alt="Изображение" class="notification-image">
+          <img src="sasha.jpg" alt="Изображение" class="notification-image">
           <p class="notification-text">Саша</p>
-          <p class="notification-additional-text">Дополнительный текст</p>
+          <p class="notification-additional-text">High Heels</p>
           <div class="notification-buttons">
-            <button class="notification-button reject">Отклонить</button>
-            <button class="notification-button accept">Принять</button>
+            <button class="notification-button reject" onclick="removeNotification(this)">Отклонить</button>
+            <button class="notification-button accept" onclick="removeNotification(this)">Принять</button>
           </div>
         </div>
       </div>
     
+    <script>
+        function removeNotification(button) {
+            var notification = button.parentNode.parentNode;
+            notification.parentNode.removeChild(notification);
+        }
+    </script>
 </body>
 </html>

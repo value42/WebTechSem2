@@ -3,6 +3,9 @@
 <head>
   <meta name="viewport" content="width=390, height=844, user-scalable=no">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Подключение стилей Font Awesome -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.google.com/specimen/Nunito" rel="stylesheet">
   <style>
   /* Стили для элементов страницы */
   body {
@@ -35,12 +38,12 @@
     font-size: 20px;
     color: #888;
     cursor: pointer;
-    margin-right: 20px; /* Изменен отступ между кнопками */
+    margin-right: 20px; 
     margin-top: 35px;
     user-select: none;
-    flex-shrink: 0; /* Запрет уменьшения размера кнопок */
-    padding: 0 10px; /* Добавлено горизонтальное отступание для кнопок */
-    transition: transform 0.3s; /* Добавлено плавное переходное свойство */
+    flex-shrink: 0; 
+    padding: 0 10px; 
+    transition: transform 0.3s; 
   }
 
   .top-button:hover {
@@ -52,7 +55,7 @@
   }
 
   .top-button.active {
-    transform: translateX(calc(50% - 10px)); /* Добавлено смещение выбранной кнопки на центр экрана */
+    transform: translateX(calc(50% - 10px)); 
   }
 
   .image-container {
@@ -118,34 +121,50 @@
     position: absolute;
     z-index: 2;
     left: 228px;
-    top: 600px;
+    top: 597px;
     margin-right: 10px;
   }
 
-  .meeting .image-info-text {
+  .image-info-text {
     position: absolute;
     color: white;
     left: 62px;
     top: 580px;
     z-index: 2;
+    font-family: Nunito;
     background-color: purple;
     border-radius: 15px;
-    padding: 5px 10px; /* Добавлено отступы внутри элемента */
+    font-size: 32 px;
+    font-weight: 600;
+    padding: 5px 10px; 
   }
 
   .meeting .image-info-text2 {
     position: absolute;
+    font-family: PT Sans;
     color: white;
     left: 258px;
-    top: 587px;
+    top: 602px;
+    z-index: 5;
+  }
+
+  .meeting .image-info-text3 {
+    position: absolute;
+    color: white;
+    left: 258px;
+    top: 602px;
+    font-size: 12 px;
     z-index: 2;
   }
+
 
   .meeting .descript {
     position: absolute;
     color: white;
     left: 64px;
-    top: 610px;
+    top: 620px;
+    font-size: 16 px;
+    font-weight: 700;
     z-index: 2;
   }
 
@@ -153,8 +172,10 @@
     position: absolute;
     color: white;
     left: 42px;
-    top: 635px;
+    top: 655px;
     z-index: 2;
+    font-size: 12 px;
+    
   }
 
   .meeting .button-want {
@@ -163,8 +184,8 @@
     border-radius: 15px;
     position: absolute;
     border: 1px solid white;
-    left: 10px;
-    top: 700px;
+    left: 30px;
+    top: 6700px;
     padding: 10px 20px;
   }
 
@@ -174,17 +195,27 @@
     border-radius: 15px;
     border: 1px solid white;
     position: absolute;
-    left: 10px;
-    top: 780px;
+    left: 30px;
+    top: 720px;
     padding: 10px 20px;
     margin-top: 20px;
   }
+  .meeting .button-want.success {
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    position: absolute;
+    border: 1px solid white;
+    left: 30px;
+    top: 700px;
+    padding: 10px 20px;
+    }
 
 
 
 
   .hidden {
-    display: none; /* Добавлено скрытие контейнеров */
+    display: none; 
   }
 </style>
 
@@ -200,7 +231,7 @@
   <div class="image-container">
 
     <div class="meeting">
-      <img src="image1.jpg" alt="Изображение 1">
+      <img src="images/highheels.jpg" alt="Изображение 1">
       
       <div class="image-info">
         <img src="image2.jpg" class="second-image" alt="Изображение 2">
@@ -209,20 +240,20 @@
 
       <div class="image-info2">
         <img src="image8.jpg" class="second-image2" alt="Изображение 8">
-        <p class="image-info-text2">Арина</p>
+        <div onclick="loadPage('user1.html')" class="image-info-text2">Арина</div>
       </div>
 
       <p class="descript">Клуб стрип-пластики в ИТМО</p>
-      <p class="details">Детали о мероприятии на которое ты пойдешь а может и нет</p>
+      <p class="details">Мастер-класс</p>
 
-      <img src="image10.jpg" class="second-image" alt="Изображение 10" style="left: 60px; top: 710px;">
-      <img src="image11.jpg" class="second-image" alt="Изображение 11" style="left: 72px; top: 710px;">
-      <img src="image12.jpg" class="second-image" alt="Изображение 12" style="left: 84px; top: 710px;">
+      <img src="image10.jpg" class="second-image" alt="Изображение 10" style="left: 50px; top: 720px;">
+      <img src="image11.jpg" class="second-image" alt="Изображение 11" style="left: 62px; top: 720px;">
+      <img src="image12.jpg" class="second-image" alt="Изображение 12" style="left: 74px; top: 720px;">
 
-      <p class="details" style="left: 120px; top: 700px;">Кто идет</p>
+      <p class="details" style="left: 105px; top: 710px; font-size: 12 px; font-weight: 700;">Кто идет</p>
 
-      <button class="button-want" style="left: 247px; top: 674px;">Хочу пойти</button>
-      <button onclick="loadPage('meeting.html')" class="button-details" style="left: 247px; top: 705px;">Подробнее</button>
+      <button class="button-want" style="left: 247px; top: 674px;"onclick="handleButtonClick(this)">Хочу пойти</button>
+      <button onclick="loadPage('meetingFromHome.html')" class="button-details" style="left: 247px; top: 705px;">Подробнее</button>
     </div>
 
 
@@ -237,44 +268,145 @@
       </div>
 
       <div class="image-info2">
-        <img src="image8.jpg" class="second-image2" alt="Изображение 8">
-        <p class="image-info-text2">Арина</p>
+        <img src="varya.jpg" class="second-image2" alt="Изображение 8">
+        <div onclick="loadPage('user2.html')" class="image-info-text3">Варвара</div>
       </div>
 
       <p class="descript">Вечеринки на теплоходе</p>
-      <p class="details">Серия вечеринок на теплоходе</p>
+      <p class="details">Серия вечеринок</p>
 
-      <img src="image10.jpg" class="second-image" alt="Изображение 10" style="left: 60px; top: 710px;">
-      <img src="image11.jpg" class="second-image" alt="Изображение 11" style="left: 72px; top: 710px;">
-      <img src="image12.jpg" class="second-image" alt="Изображение 12" style="left: 84px; top: 710px;">
+      <img src="alena.jpg" class="second-image" alt="Изображение 10" style="left: 60px; top: 710px;">
+      <img src="kate.jpg" class="second-image" alt="Изображение 11" style="left: 72px; top: 710px;">
+      <img src="sofa.jpg" class="second-image" alt="Изображение 12" style="left: 84px; top: 710px;">
 
       <p class="details" style="left: 120px; top: 700px;">Кто идет</p>
 
-      <button class="button-want" style="left: 247px; top: 674px;">Хочу пойти</button>
+      <button class="button-want" style="left: 247px; top: 674px;"onclick="handleButtonClick(this)">Хочу пойти</button>
+      <button onclick="loadPage('meetingFromHome2.html')" class="button-details" style="left: 247px; top: 705px;">Подробнее</button>
+    </div>
+    
+    <div class="meeting"><img src="image5.jpg" alt="Изображение 5">
+    <div class="image-info">
+        <img src="image2.jpg" class="second-image" alt="Изображение 2">
+        <p class="image-info-text">Манга</p>
+      </div>
+
+      <div class="image-info2">
+        <img src="masha.jpg" class="second-image2" alt="Изображение 8">
+        <div onclick="loadPage('user.html')" class="image-info-text3">Арина</div>
+      </div>
+
+      <p class="descript">Искусство “Манга”</p>
+      <p class="details">Выставка с экспонатами</p>
+
+      <img src="nastya.jpg" class="second-image" alt="Изображение 10" style="left: 60px; top: 710px;">
+      <img src="alena.jpg" class="second-image" alt="Изображение 11" style="left: 72px; top: 710px;">
+      <img src="alina.jpg" class="second-image" alt="Изображение 12" style="left: 84px; top: 710px;">
+
+      <p class="details" style="left: 120px; top: 700px;">Кто идет</p>
+
+      <button class="button-want" style="left: 247px; top: 674px;" onclick="handleButtonClick(this)">Хочу пойти</button>
       <button onclick="loadPage('meeting.html')" class="button-details" style="left: 247px; top: 705px;">Подробнее</button>
     </div>
+<div class="meeting"><img src="image6.jpg" alt="Изображение 6">
+    <div class="image-info">
+        <img src="image2.jpg" class="second-image" alt="Изображение 2">
+        <p class="image-info-text">Ночь музеев</p>
+      </div>
 
+      <div class="image-info2">
+        <img src="alina.jpg" class="second-image2" alt="Изображение 8">
+        <div onclick="loadPage('user3.html')" class="image-info-text3">Элина</div>
+      </div>
 
+      <p class="descript">Ночь музеев - 2023</p>
+      <p class="details">Тема "Опыт"</p>
+
+      <img src="kate.jpg" class="second-image" alt="Изображение 10" style="left: 60px; top: 710px;">
+      <img src="sasha.jpg" class="second-image" alt="Изображение 11" style="left: 72px; top: 710px;">
+      <img src="sofa.jpg" class="second-image" alt="Изображение 12" style="left: 84px; top: 710px;">
+
+      <p class="details" style="left: 120px; top: 700px;">Кто идет</p>
+
+      <button class="button-want" style="left: 247px; top: 674px;" onclick="handleButtonClick(this)">Хочу пойти</button>
+      <button onclick="loadPage('meeting.html')" class="button-details" style="left: 247px; top: 705px;">Подробнее</button>
+    
+  </div>
 
     <div class="meeting"><img src="image3.jpg" alt="Изображение 3"></div>
     <div class="meeting"><img src="image4.jpg" alt="Изображение 4"></div>
   </div>
 
+
+
   <div class="image-container hidden">
     <!-- Добавьте изображения для контейнера 2 -->
     <div class="meeting"><img src="image5.jpg" alt="Изображение 5">
-<div class="image-info">
+    <div class="image-info">
         <img src="image2.jpg" class="second-image" alt="Изображение 2">
         <p class="image-info-text">Манга</p>
       </div>
 
       <div class="image-info2">
         <img src="image8.jpg" class="second-image2" alt="Изображение 8">
-        <p class="image-info-text2">Арина</p>
+        <div onclick="loadPage('user2.html')" class="image-info-text3">Арина</div>
       </div>
 
       <p class="descript">Искусство “Манга”</p>
-      <p class="details">Первая в России масштабная выставка с экспонатами из Японии</p>
+      <p class="details">Выставка с экспонатами</p>
+
+      <img src="alena.jpg" class="second-image" alt="Изображение 10" style="left: 60px; top: 710px;">
+      <img src="image11.jpg" class="second-image" alt="Изображение 11" style="left: 72px; top: 710px;">
+      <img src="sofa.jpg" class="second-image" alt="Изображение 12" style="left: 84px; top: 710px;">
+
+      <p class="details" style="left: 120px; top: 700px;">Кто идет</p>
+
+      <button class="button-want" style="left: 247px; top: 674px;" onclick="handleButtonClick(this)">Хочу пойти</button>
+      <button onclick="loadPage('meeting.html')" class="button-details" style="left: 247px; top: 705px;">Подробнее</button>
+    </div>
+
+    <div class="meeting"><img src="image6.jpg" alt="Изображение 6">
+    <div class="image-info">
+        <img src="image2.jpg" class="second-image" alt="Изображение 2">
+        <p class="image-info-text">Ночь музеев</p>
+      </div>
+
+      <div class="image-info2">
+        <img src="image8.jpg" class="second-image2" alt="Изображение 8">
+        <div onclick="loadPage('user2.html')" class="image-info-text3">Элина</div>
+      </div>
+
+      <p class="descript">Ночь музеев - 2023</p>
+      <p class="details">Тема "Опыт"</p>
+
+      <img src="kate.jpg" class="second-image" alt="Изображение 10" style="left: 60px; top: 710px;">
+      <img src="image11.jpg" class="second-image" alt="Изображение 11" style="left: 72px; top: 710px;">
+      <img src="sasha.jpg" class="second-image" alt="Изображение 12" style="left: 84px; top: 710px;">
+
+      <p class="details" style="left: 120px; top: 700px;">Кто идет</p>
+
+      <button class="button-want" style="left: 247px; top: 674px;" onclick="handleButtonClick(this)">Хочу пойти</button>
+      <button onclick="loadPage('meeting.html')" class="button-details" style="left: 247px; top: 705px;">Подробнее</button>
+    
+  </div>
+
+</div>
+  <div class="image-container hidden">
+    <!-- Добавьте изображения для контейнера 3 -->
+    <div class="meeting">
+      <img src="image2.jpg" alt="Изображение 1">
+      <div class="image-info">
+        <img src="image2.jpg" class="second-image" alt="Изображение 2">
+        <p class="image-info-text">Гидровояж</p>
+      </div>
+
+      <div class="image-info2">
+        <img src="varya.jpg" class="second-image2" alt="Изображение 8">
+        <div onclick="loadPage('user2.html')" class="image-info-text3">Варвара</div>
+      </div>
+
+      <p class="descript">Вечеринки на теплоходе</p>
+      <p class="details">Серия вечеринок</p>
 
       <img src="image10.jpg" class="second-image" alt="Изображение 10" style="left: 60px; top: 710px;">
       <img src="image11.jpg" class="second-image" alt="Изображение 11" style="left: 72px; top: 710px;">
@@ -282,25 +414,17 @@
 
       <p class="details" style="left: 120px; top: 700px;">Кто идет</p>
 
-      <button class="button-want" style="left: 247px; top: 674px;">Хочу пойти</button>
-      <button onclick="loadPage('meeting.html')" class="button-details" style="left: 247px; top: 705px;">Подробнее</button>
+      <button class="button-want" style="left: 247px; top: 674px;"onclick="handleButtonClick(this)">Хочу пойти</button>
+      <button onclick="loadPage('meetingFromHome2.html')" class="button-details" style="left: 247px; top: 705px;">Подробнее</button>
     </div>
-    <div class="meeting"><img src="image6.jpg" alt="Изображение 6"></div>
-    <div class="meeting"><img src="image7.jpg" alt="Изображение 7"></div>
-  </div>
-
-  <div class="image-container hidden">
-    <!-- Добавьте изображения для контейнера 3 -->
-    <div class="meeting"><img src="image8.jpg" alt="Изображение 8"></div>
-    <div class="meeting"><img src="image9.jpg" alt="Изображение 9"></div>
-    <div class="meeting"><img src="image10.jpg" alt="Изображение 10"></div>
+    
   </div>
 
   <div class="image-container hidden">
     <!-- Добавьте изображения для контейнера 4 -->
-    <div class="meeting"><img src="image11.jpg" alt="Изображение 11"></div>
-    <div class="meeting"><img src="image12.jpg" alt="Изображение 12"></div>
-    <div class="meeting"><img src="image13.jpg" alt="Изображение 13"></div>
+    <div class="meeting"><img src="masha.jpg" alt="Изображение 11"></div>
+    <div class="meeting"><img src="nastya.jpg" alt="Изображение 12"></div>
+    <div class="meeting"><img src="alina.jpg" alt="Изображение 13"></div>
   </div>
 
   <script>
@@ -310,6 +434,11 @@
         container.classList.add('hidden');
       });
       containers[index].classList.remove('hidden');
+    }
+    function handleButtonClick(button) {
+      button.innerHTML = "Вы записаны!";
+      button.classList.add("success");
+      button.disabled = true;
     }
 
     
